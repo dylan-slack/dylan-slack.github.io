@@ -23,15 +23,25 @@ function init(){
    imgObj = document.getElementById('image');
    imgObj.style.position= 'absolute';
    imgObj.style.top = '25px';
-   imgObj.style.left = '-300px';
+   imgObj.style.left = '-50px';
    imgObj.style.visibility='invisible';
 
    
-    document.addEventListener('scroll', function(e) {
+    // document.addEventListener('scroll', function(e) {
         if (start == 1) {
             start = 0;
             animate = setTimeout(function(){move();},20);
         }
+    // });
+
+
+    document.getElementById("image").addEventListener("click", function(){
+        console.log('here');
+        var offsets = document.getElementById('mostrecentpaper').getBoundingClientRect();
+        var top = offsets.top;
+        var left = offsets.left;
+        console.log(top);
+        console.log(left);
     });
 
 
@@ -45,7 +55,7 @@ function move(){
     // alert(window.screen.availWidth);
     // alert(window.screen.availHeight);
 
-    if (counter <= 65) {
+    if (counter <= 20) {
         imgObj.style.left = (left + 5) + 'px';
         imgObj.style.visibility='visible';
         counter = counter + 1;
