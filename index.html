@@ -1,11 +1,11 @@
 <!DOCTYPE HTML>
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" href="stylesheet.css">
-<script src="animate.js"></script> 
+<!-- <script src="animate.js"></script>  -->
 
-<div id="container">
+<!-- <div id="container">
   <img src="cz.webp" id="image" width="50" height="30">
-</div>
+</div> -->
 <style type="text/css">
     /* Color scheme stolen from Sergey Karayev */
     a {
@@ -18,25 +18,25 @@
     }
     body,td,th,tr,p,a {
     font-family: "TeXGyrePagella", "Palatino Linotype", "Book Antiqua", Palatino, serif; /*'Lato', Verdana, Helvetica, sans-serif;*/
-    font-size: 15px; /*14*/
+    font-size: 22px /*14*/
     }
     strong {
     font-family: "TeXGyrePagella", "Palatino Linotype", "Book Antiqua", Palatino, serif; /*'Lato', Verdana, Helvetica, sans-serif;*/
-    font-size: 15px; /*14*/
+    font-size: 22px /*14*/
     }
     heading {
     font-family: "TeXGyrePagella", "Palatino Linotype", "Book Antiqua", Palatino, serif; /*'Lato', Verdana, Helvetica, sans-serif;*/
-    font-size: 22px;
+    font-size: 26px;
     color: #e37222; /*#fc4a1a;*/
     }
     heading2 {
     font-family: "TeXGyrePagella", "Palatino Linotype", "Book Antiqua", Palatino, serif; /*'Lato', Verdana, Helvetica, sans-serif;*/
-    font-size: 18px;
+    font-size: 22px;
     }
     papertitle {
     font-family: "TeXGyrePagella", "Palatino Linotype", "Book Antiqua", Palatino, serif; /*'Lato', Verdana, Helvetica, sans-serif;*/
-    font-size: 15px; /*14*/
-    font-weight: 700;
+    font-size: 22px /*14*/
+    /*font-weight: 700;*/
     }
     name {
     font-family: "TeXGyrePagella", "Palatino Linotype", "Book Antiqua", Palatino, serif; /*'Lato', Verdana, Helvetica, sans-serif;*/
@@ -88,12 +88,12 @@
 </head>
 
 <body>
-  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <table style="width:100%;max-width:1000px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
     <tr style="padding:0px">
       <td style="padding:0px">
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
           <tr style="padding:0px">
-            <td style="padding:7.5%;width:63%;vertical-align:middle">
+            <td style="padding:5.0%;width:70%;vertical-align:middle">
               <p style="text-align:center">
                 <name>Dylan Slack</name>
                 <br>
@@ -104,7 +104,7 @@
               <p>Hello! I am a fourth-year PhD candidate at University of California, Irvine advised by <a href="https://sameersingh.org/">Sameer&nbspSingh</a> and <a href="https://himalakkaraju.github.io/">Hima&nbspLakkaraju</a> (@ Harvard University). 
               </p>
               <p>
-              I work on machine learning as part of <a href="https://ucinlp.github.io">UCI NLP</a>, <a href="https://create.ics.uci.edu/people/">UCI CREATE</a>, and the <a href="https://www.ics.uci.edu/hpi/">HPI Research Center</a>. My research is supported by an <a href="https://www.ics.uci.edu/hpi/">HPI</a> fellowship. I've previously interned at <a href="https://aws.amazon.com/">AWS</a> in Summer 2020 and <a href="https://ai.google/">Google AI</a> in Summer 2021&nbsp👨‍💻.
+              I work on machine learning and natural language processing as part of <a href="https://ucinlp.github.io">UCI NLP</a>, <a href="https://create.ics.uci.edu/people/">UCI CREATE</a>, and the <a href="https://www.ics.uci.edu/hpi/">HPI Research Center</a>. My research is generously supported by an <a href="https://www.ics.uci.edu/hpi/">HPI</a> fellowship. I've previously interned at <a href="https://aws.amazon.com/">AWS</a> in Summer 2020 and <a href="https://ai.google/">Google AI</a> in Summer 2021&nbsp👨‍💻.
               </p>
               <p style="text-align:center">
                 <a href="data/dylan_z_slack_CV.pdf">CV</a>&nbsp/&nbsp
@@ -117,14 +117,25 @@
               <a href="images/me.jpeg"><img style="width:100%;max-width:100%" alt="profile photo" src="images/me.jpeg" class="hoverZoomLink"></a>
             </td>
           </tr>
+
         </tbody></table>
+
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             <tr>
             <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Research</heading>
-              <p>
-                I work on machine learning, natural language processing, and robustness. My goal is to develop techniques that help people build more robust, reliable, and trustworthy machine learning models.
-              </p>
+              <heading>Research Interests</heading>
+              <br>
+              <br>
+              I am broadly interested in machine learning and natural language processing. Some of my current research directions are:
+              <br>
+              <br>
+              <b>Large Language Models</b> I use large language models to develop <a href="https://arxiv.org/abs/2207.04154">dialogue systems</a> that enable anyone to understand the predictions of any ML model through open-ended conversations, and I <a href="https://arxiv.org/abs/2202.01875">study</a> the potential applications of such systems.
+              <br>
+              <br>
+              <b>ML Explanations</b> I analyze the security of ML explanations by developing adversarial attacks on explanations including <a href="https://dl.acm.org/doi/pdf/10.1145/3375627.3375830">feature importance</a> and <a href="https://arxiv.org/abs/2106.02666">counterfactual</a> explanations. I also develop <a href="https://arxiv.org/abs/2008.05030">more robust</a> explanations and <a href="https://arxiv.org/abs/2106.04631">benchmark</a> their robustness.
+     <!--          <br>
+              <br>
+              <b>Improving Explanations</b> I analyze the security of explanations by developing adversarial attacks on <a href="https://dl.acm.org/doi/pdf/10.1145/3375627.3375830">feature importance</a> and <a href="https://arxiv.org/abs/2106.02666">counterfactual</a> explanations. I also develop <a href="https://arxiv.org/abs/2008.05030">more robust</a> explanations and <a href="https://arxiv.org/abs/2106.04631">benchmark</a> their robustness. -->
             </td>
           </tr>
         </tbody></table>
@@ -589,7 +600,7 @@
             <td style="padding:0px">
               <br>
               <p style="text-align:right;font-size:small;">
-                Source modified from this <a href="https://jonbarron.info/">website</a>.
+                <a href="https://jonbarron.info/"><font size="2">Source modified from here.</font></a>
               </p>
             </td>
           </tr>
