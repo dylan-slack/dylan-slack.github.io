@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<!-- style from view-source:http://web.simmons.edu/~grabiner/comm244/weekfour/code-test.html#:~:text=You%20can%20include%20code%20examples,code%20as%20what%20it%20is. -->
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+  <title>Safety Notes</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/markdown-it@12.0.0/dist/markdown-it.min.js"></script>
+
+  <style type="text/css" media="screen">
+
+    body {
+      line-height: 140%;
+      margin: 50px;
+      width: 1024px;
+    }
+    code {font-size: 120%;}
+
+
+    pre code {
+      background-color: #eee;
+      border: 1px solid #999;
+      display: block;
+      padding: 20px;
+    }
+
+    gpt {
+      background-color: #eee;
+      border: 2px solid #999;
+      display: block;
+      padding: 10px;
+    }
+
+  </style>
+
+     <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+
+
+</head>
+
+<body>
+
+<a href="index.html">Return to Index</a>
+
+<h1 id="safety_notes">Safety Notes</h1>
+
+On going notes on AI Safety.
+
+<h2>The Alignment Problem from a Deep Learning Perspective</h2>
+
+<h4>Ngo et. al.</h4>
+
+<h5>Rough Summary</h5>
+<p>
+  Current methods for aligning LLMs largely rely on RLHF. The signal for RLHF is provided via human feedback and models must learn to maximize this reward signal. This introduces some potential pitfalls, though as models are increasingly provided with means for improved situational awareness. Aside, its likely models will be trained to improve their situational awareness, because fully understanding the context of how they're being run is important for performing the best in a wide range of settings. However, as models get improved situational awareness, its possible they may "situationally hack rewards." Meaning, aligning them could be more challenging because, say, if a model knows its being evaluated for behaving ethically, it could easily behave ethically, though it also knows that it wouldn't need to behave ethically IRL to maximize some reward function because it's not being evaluated then.
+</p>
+
+<p>
+  The paper also discusses issues to do with misaligned internally-represented goals. The main idea here is that AI's increasingly will be able to represent "broadly scope goals" internally. Broadly scoped goals within a model are internal goals that last across some fixed time horizon. For example, InstructGPT was only trained in English but learned to follow instructions in French. This finding indicates the model learned the notion of "instruction following." The paper argues it stands to reason that models learn internal representations of goals, and as models are increasingly trained to work in longer horizon settings, they'll have representations of "broad" goals.
+</p>
+
+<p>
+  Based on the argument about long-lasting goal representations, the authors go on to discuss "misaligned goals." They define goals being "aligned" when the goal agreed with "widespread" human preferences. Goals are misaligned when the goal conflicts with the goal which would be broadly accepted. They introduce two problems: "inner alignment" and "outer alignment." Inner alignment is when the model has internal representations of goals with are "aligned." In contrast, "outer alignment" is when models are aligned with specified rewards. They point out that these may be in contention because models may still have outer-aligned even if they do not have inner-alignment, and there are many training settings which may cause models to naturally not be inner-aligned. For example, they introduce the notion of "goal-overfitting." Models which are trained to execute certain goals in permissible situations may generalize these goals in many different situations. For instance if models are trained to gather resources, they may execute this goal aggresively in many other cases. Another example is where models recieve misspecifed rewards. The model may learn the signal in faulty, but it has to provide faulty answers to humans to satisfy them, so may learn some aspects of deception.
+</p>
+
+<p>
+  The next concern they bring up is that "power seeking behavior" is one prominent and concerning misaligned goal. By power-seeking behavior, the authors mean behaviors that in some way allow the model to control aspects of its environment. These include aquired tools + resources or convincing others to do what the model wants. Learning such goals is natural because increased power correlates with better capability to execute on various goals. If agents have increased power, this behavior will also be reinforced during training, because better execution results in higher reward + reinforcement. Moreover, prevent advanced models from showing indication of power seeking behavior or misalgined goals will be increasingly challenging, due to the fact that situational awareness is increasing, and models could potentially shape their behavior to perform well on specific training designed to prevent power seeking behavior, while simultaneously still behaving this way IRL to get the most rewards.
+</p>
+
+<p>
+  One additional complication is that multiple agents may collude, making prevention much more challenging. Detecting collusion will be hard because models can likely communicate much more quickly than humans and in protocals that are undetectable. Moreover, if models are situationally aware and know they need to improve their own capabilities + agency to survive & execute goals, they may improve in ways humans cannot understand.
+</p>
+
+<h5>Reaction</h5>
+<p>
+  This paper is interesting and forward-looking. I think that monitoring and testing for these sorts of explotations and situation awareness in the same way we evaluate many high-stakes industries will be needed (e.g., random inspection on real-work). Of course, if we assume AI is infinitely intelligent, there's always a rabbit-hole to go down about the AI predicting and gaming evaluations, so sophisticated evaluation and monitoring methods will be necessary. I'm also curious about the mechanism models with use to "make the jump" of sorts between being extremely intelligent and actually having meaningful control on the world around them. There's a couple skips and jumps to actually get here.
+</p>
+
+<h2>Introducing Superalignment</h2>
+
+<h4>Leike et. al.</h4>
+
+<h5>Rough Summary</h5>
+<p>
+  This blog posts introduces OpenAI's new superalignment team. The goal of this team presented in the early part of this blog post is to develop methods for controlling superintelligent AI. Meaning, that, assuming we manage to develop AI much smarter than humans, how do we actually control this AI and prevent catastrophic outcomes. There's a running assumption in the introduction that current methods for supervising models (e.g., simply finetuning) are insufficient to prevent superintelligent models from behaving badly. I'm assuming the motivation for this assumption is the argument that superintelligent models may "recognize" fine-tuning efforts and signal to humans that they are aligned, while still being unaligned, or that all our efforts to align models may result in actually being somewhat misaligned (by mistake) from our goals). In a footnote, they call a case where we can align models via known methods to an adequate degree the case where we have "favorable generalization properties."
+</p>
+
+<p>
+  They outline that their goal is to build a "roughly human-level automated alignment researcher." They say they're going to do this in three steps. First, they'll develop methods via AI that allow "scalable oversight" of other models. The idea is that models, which are more competent than humans will be used to understand other models. Second, they'll automate the process of discovering dangerous model behavior and representations. Finally, they'll ablate their system by training purposely misaligned models and verify their methods detect it.
+</p>
+
+<h5>
+  Reaction
+</h5>
+
+<p>
+  This blog post isn't really as well thought out as a paper perhaps, but I still am left a little confused by the messaging in the text. Preventing catostrophic outcomes from misaligned AI's is a good idea and I agree with the teams direction, but some of the details are a bit confusing as it stands. For example, under the assumption that it's challenging the prevent AI from having misaligned internal representations and no good way exists to do this, why should we expect that we can create another AI that can successfully mitigate the first AI. Assuming everything we've read so far is true and the AI will be power-seeking etc etc the supervisor AI could suffer from these same problems. For example, what if the supervisor AI decided that humans mucking about with trying to align the other AI was dangerous, because humans can't reason nearly sufficiently to do a good enough job, and that any interference to the supervisor's ability to supervise the AI was detremental to its goal? It could reasonably decide to ignore any further human oversight. Moreover, if the supervisor's was not as capable as the main AI, the smarter AI could escape supervision attempts.
+</p>
+
+<p>
+  It certainly makes sense that AI assisted methods for evaluating and monitoring models will be quite useful. But, if we begin with the assumption that superintelligent AI can basically get around human's alignment attempts, it doesn't seem completely reasonable to expect some type of supervisor AI to be the answer. I suspect this team will develop some really useful methods for leveraging model based assistance for monitoring models, but it's a bit unclear that, assuming we accept superintelligence as a reasonable outcome of AI development, we'll be able to do much to prevent it from leading to dangerous outcomes with any sorts of model supervision---for exactly the same reason we couldn't reasonly supervise the initial AI to begin with.
+</p>
+
+<h2>Artificial Intelligence and the Problem of Control</h2>
+
+<h4>Stuart Russel</h4>
+
+<p>This short paper starts by summarizing definitions of "intelligence" to remind readers about what AI strives to achieve, starting with Aristotle's notion that intelligence concerns ability to achieve means to an end. For humans, we decided this end, but for AI, we give this end and expect the AI to do the work of achieving it. There have been revisions to this theory, like introducing notions of randomness in pursuing means to an end, but it has largely been consistent. However, Russel points out that this theory of intelligence has largely been applied incorrectly to AI systems, because, outside artificial simulated environments, it's highly challenging to fully specify objectives. Objectives in the real-world are complex and multifaceted things---expecting a perfect definition of hard-to-pin-down human goals is a challenge. Russel introduces three principles in a new model of intelligence for AI. First, the machine should realize human preferences. Second, the machine is uncertain about those preferences at the beginning. Finally, the key source of information about human preferences is the behavior of humans. Because the preference problem is so challenging, naively providing preferences to advanced AI could yield bad results, because AI's may to anything to achieve them, including net negative things for humans. Consequently, it's important to create standards for "beneficial AI" so we can properly communicate to regulators and policymakers what regulations around advanced AI should look like. The problem of enforcing procedures for ensuring beneficial AI is equally problematic, and Russel refer's to Dune's solution of banning on "thinking-machines"---though he hopes we'll be able to devise a less drastic solution that a total-ban.</p>
+
+<h5>
+  Reaction
+</h5>
+
+<p>
+  Russel's idea of human behavior being the key source of their preferences is quite interesting. I've often thought people have external facing preferences (what they do and say) and internal facing preferences (what they hope to be or what they tell themselves). Someone's displayed preferences might be different than their internal preferences. The reason for this distinction could be because of internal blockers ("I want to get a college degree, but I don't think I'm smart enough.") or external ("My culture doesn't allow a certain group of people to receive higher-education, so I won't voice or indicate that this is what I want"). Aligning AI mainly through human behavior doesn't seem like it would fully "unlock" the value of AI for everyone. I'd hope AI would help get someone get a college degree instead of enforcing prior behavior or societal tendencies. I'm not sure Russel would disagree with this, as its likely lifting people up and encouraging them to get better are very desirable behaviors many humans exhibit, but it does raise an interesting question of whose behaviors (and thus values) the models should learn from.
+</p>
+

@@ -1,0 +1,318 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<!-- style from view-source:http://web.simmons.edu/~grabiner/comm244/weekfour/code-test.html#:~:text=You%20can%20include%20code%20examples,code%20as%20what%20it%20is. -->
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+  <title>Linear Algebra Review</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/markdown-it@12.0.0/dist/markdown-it.min.js"></script>
+  
+  <style type="text/css" media="screen">
+  
+    body {
+      line-height: 140%;
+      margin: 50px;
+      width: 1024px;
+    }
+    code {font-size: 120%;}
+    
+    
+    pre code {
+      background-color: #eee;
+      border: 1px solid #999;
+      display: block;
+      padding: 20px;
+    }
+
+    gpt {
+      background-color: #eee;
+      border: 2px solid #999;
+      display: block;
+      padding: 10px;
+    }
+    
+  </style>
+
+     <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+  
+  
+</head>
+
+<body>
+
+<a href="index.html">Return to Index</a>
+  
+<h1 id="using_code_example_in_html">Linear Algebra Review</h1>
+
+GPT-4's recommended linear algebra review study guide:
+
+<br>
+
+<script type="text/markdown">
+Here are some key topics you should focus on:
+
+1. **Vectors and Scalars**:
+   - Understanding vectors (magnitude and direction), vector addition, and scalar multiplication.
+   - Dot product and cross product of vectors.
+
+2. **Matrices**:
+   - Basics of matrices, matrix addition, and multiplication.
+   - Concepts of the identity matrix and inverse matrices.
+   - Understanding matrix transformations.
+
+3. **Systems of Linear Equations**:
+   - Solving linear equations using matrix methods.
+   - Understanding different methods like Gaussian elimination.
+
+4. **Determinants**:
+   - Calculating determinants.
+   - Understanding the physical and geometric interpretation of determinants.
+
+5. **Eigenvalues and Eigenvectors**:
+   - Basic understanding of eigenvalues and eigenvectors.
+   - Applications in solving differential equations and in stability analysis.
+
+6. **Linear Transformations**:
+   - Understanding the concept of linear transformations.
+   - Basis and dimension, and their roles in transformations.
+
+7. **Vector Spaces and Subspaces**:
+   - Basics of vector spaces, subspaces, basis, and dimension.
+   - Understanding null space, column space, and row space of a matrix.
+
+8. **Orthogonality and Least Squares**:
+   - Concepts of orthogonality, orthogonal sets, and orthogonal projections.
+   - Least squares approximation and its applications.
+
+9. **Singular Value Decomposition (SVD)**:
+   - Basics of SVD and its applications in data compression and principal component analysis.
+</script>
+
+<gpt><div id="result"></div></gpt>
+
+<script>
+  var md = window.markdownit();
+  var markdownContent = document.querySelector('script[type="text/markdown"]').textContent;
+  var result = md.render(markdownContent);
+  document.getElementById('result').innerHTML = result;
+</script>
+
+Let's do it, and think about how these are implemented in Numpy. A <a href="linear_algebra_review.py">python file</a> is provided here.
+
+<h2>Precursor: Why Numpy?</h2>
+
+We'll be performing most of these operations in Numpy. Why use Numpy?
+
+<pre>
+  <code>
+import numpy as np
+  </code>
+</pre>
+
+The core idea for why to use Numpy over a more general purpose way of representing arrays, such as a Python list, is that Numpy exploits certain assumptions made about the content of the array in order to reduce memory requirements and increase speed of operations on the array. For example, a Numpy arrays have fixed size, elements share the same data type, and are stored homogeneous in memory, whereas Python lists contain pointers to objects, which may not share the same data type. For instance, multiplying every element of a Python array requires a lookup, type check, and multiply, while Numpy arrays can perform this same operation without looking up nor type checking every element. Thus, Python lists are generally more flexible but are slower for operations performed across the array.
+
+<h2>Vectors and Scalars</h2>
+
+Let's go through the motions here.
+
+<h4> Magnitude </h4>
+
+<pre>
+  <code>
+a = np.arange(1_000)
+a_magnitude = np.sqrt(np.sum(a**2))
+print(a_magnitude)
+# 18243.72
+  </code>
+</pre>
+
+<h4> Direction </h4>
+
+Assuming GPT-4 means unit vector.
+
+<pre>
+  <code>
+a_unit = a / a_magnitude
+norm = np.linalg.norm(a_unit, ord=2)
+assert norm == 1.0 # True
+  </code>
+</pre>
+
+<h4> Vector Operations </h4>
+
+E.g., addition in Python and numpy:
+
+<pre>
+  <code>
+# Multiplication
+a = [1, 2, 3]
+b = [4, 5, 6]
+c = []
+for i in range(len(a)):
+     c.append(a[i] * b[i])
+# Easier in numpy of course
+a = np.array(a)
+b = np.array(b)
+c = a * b
+  </code>
+</pre>
+</body>
+</html>
+
+<h4> Broadcasting </h4>
+
+During operations when arrays have different shapes, Numpy employs "broadcasting" to "apply" the smaller array across the larger array for the operation in an organized way. Specifically, broadcasting starts with the right most dimension and walks leftwards, checking to see if the dimension is either one or equal. If this is the case for every dimension (noting dimensions not explicity specified can be treated as one, such as leading dimensions), the array can be broadcasted. For example,
+
+<pre>
+  <code>
+a = np.random.rand(100, 42, 3)
+b = np.random.rand(42, 3)
+c = a + b
+print(c.shape) # (100, 42, 3)
+assert c[0].sum() == (a[0] + b).sum() # True
+  </code>
+</pre>
+
+Another more practical application for deep learning is when you need to mask out each row up to a certain value in another array. For example:
+
+<pre>
+  <code>
+a = np.array([[1,2,3,4],[5,6,7,8],[9,10,11,12]]) # (3, 4)
+arranged = np.arange(a.shape[1]).reshape(1, a.shape[1]) # (1, 4)
+inds = np.array([1, 3, 2]).reshape(a.shape[0], 1) # (3, 1)
+mask = arranged <= inds # broadcasted to (3, 4)
+print(mask)
+# [[ True  True False False]
+#  [ True  True  True  True]
+#  [ True  True  True False]]
+a[~mask] = 0
+print(a)
+# [[ 1  2  0  0]
+#  [ 5  6  7  8]
+#  [ 9 10 11  0]]
+  </code>
+</pre>
+
+We can use the broadcasting operation to conveniently select up the nth indice.
+
+<h4> Dot Product </h4>
+
+In Numpy,
+
+<pre>
+  <code>
+# Dot Product
+a = np.random.rand(10)
+b = np.random.rand(10)
+c = a.dot(b) # take dot product
+c_d = (a * b).sum() # its multiply index-wise and then sum
+assert np.allclose(c, c_d)
+  </code>
+</pre>
+
+<h4> Matrix Multiplication </h4>
+
+Basic Matrix multiplication
+
+<pre>
+  <code>
+a = np.random.rand(100, 10)
+b = np.random.rand(100, 10)
+c = a @ b.T # (500, 100), simple
+b_t = b.T # (100, 500)
+
+def mat(a, b):
+    c_manual = []
+    for i in range(a.shape[0]):
+        col = []
+        for j in range(b.shape[1]):
+            c_v = 0
+            for q in range(a.shape[1]):
+                c_v += a[i, q] * b[q, j]
+            col.append(c_v)
+        c_manual.append(col)
+    return c_manual
+
+assert np.allclose(c, mat(a, b_t))
+  </code>
+</pre>
+
+These operations, can be arbitrarily swapped around:
+
+<pre>
+	<code>
+def mat_swap(a, b):
+    sol = np.zeros((a.shape[0], b.shape[1]))
+    for q in range(a.shape[1]):
+        for i in range(a.shape[0]):
+            for j in range(b.shape[1]):
+                sol[i, j] += a[i, q] * b[q, j]
+    return sol
+
+assert np.allclose(mat_swap(a, b_t), mat(a, b_t))
+	</code>
+</pre>
+
+Because it can have impact on memory access patterns, it can be more desirable to tile these matrix operations. In particular, we work on smaller "tiles" of some width as follows. The advantage of working on tiles is that, with the CPU cache, contiguous arrays of elements are placed into the cache. When we mutliple the whole row against every column, some of those column elements are likely to be evicted for large matrices. Instead, we reduce the time any given column element will be accessed by working on smaller tiles.
+
+<pre>
+	<code>
+def mat_tiled(a, b, T):
+    sol = np.zeros((a.shape[0], b.shape[1]))
+    for i in range(0, a.shape[0], T):
+        for j in range(0, b.shape[1], T):
+            for q in range(0, a.shape[1], T):
+
+                # break up each matmul into chunks
+                for i_t in range(i, min(i+T, a.shape[0])):
+                    for j_t in range(j, min(j+T, b.shape[1])):
+                        for q_t in range(q, min(q+T, a.shape[1])):
+                            sol[i_t, j_t] += a[i_t, q_t] * b[q_t, j_t]
+    return sol
+
+T = int(a.shape[1] ** 0.5)
+assert np.allclose(mat_tiled(a, b_t, T), mat(a, b_t))
+	</code>
+</pre>
+
+<h4> Gaussian Elimination </h4>
+
+The determinant of a matrix can be computed by running the Gaussian elimination algorithm and taking the product of the diagonal. We can also find the rank of the matrix using this procedure, by eliminating and finding the number of non-zero rows. The determinent of the matrix intuitively captures the volume scaling of the shape formed by the matrix. An implementation of Gaussian elimination to compute the determinant is given as:
+
+<pre>
+	<code>
+def gaussian_elimination(a):
+    cur_j = 0
+    for i in range(a.shape[1]):
+        col_sort = np.argsort(np.abs(a[:, i]))
+        col_sort = col_sort[col_sort >= cur_j]
+        if a[col_sort[-1], i] == 0:
+            continue # solved
+        else:
+            if cur_j != col_sort[-1]:
+                largest_row = a[col_sort[-1]].copy()
+                a[col_sort[-1]] = a[cur_j]
+                a[cur_j] = largest_row
+            for q in range(cur_j+1, a.shape[0]):
+                if a[q, i] == 0:
+                    continue
+                a[q] = a[cur_j] - a[q] * a[cur_j, i] / a[q, i]
+            cur_j += 1
+    determinant = a[np.arange(a.shape[0]), np.arange(a.shape[1])].prod()
+    rank = (np.sum(np.abs(a), axis=1) > 0).sum()
+    return determinant, rank
+
+a = np.random.randint(3, size=(4, 4)) * 1.
+det, rank = gaussian_elimination(a)
+det_np = np.linalg.det(a)
+assert np.allclose(det, det_np), f"{det} | {det_np}" # True
+assert np.linalg.matrix_rank(a) == rank, f"{rank}" # True
+	</code>
+</pre>
