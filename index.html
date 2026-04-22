@@ -1,697 +1,268 @@
 <!DOCTYPE HTML>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" type="text/css" href="stylesheet.css">
-<script src="animate.js"></script> 
+<html lang="en">
 
-<!-- <div id="container">
-  <img src="cz.webp" id="image" width="50" height="30">
-</div> -->
-<style type="text/css">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <script src="animate.js"></script>
+
+  <style type="text/css">
     /* Color scheme stolen from Sergey Karayev */
     a {
-    color: #07889b; /*#1772d0;*/
-    text-decoration:none;
+      color: #07889b;
+      text-decoration: none;
     }
-    a:focus, a:hover {
-    color: #e37222; /*#f7b733;*/ /*f09228;*/
-    text-decoration:none;
+
+    a:focus,
+    a:hover {
+      color: #e37222;
+      text-decoration: none;
     }
-    body,td,th,tr,p,a {
-    font-family: "TeXGyrePagella", "Palatino Linotype", "Book Antiqua", Palatino, serif; /*'Lato', Verdana, Helvetica, sans-serif;*/
-    font-size: 22px /*14*/
+
+    body,
+    td,
+    th,
+    tr,
+    p,
+    a {
+      font-family: "TeXGyrePagella", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+      font-size: 22px
     }
+
     strong {
-    font-family: "TeXGyrePagella", "Palatino Linotype", "Book Antiqua", Palatino, serif; /*'Lato', Verdana, Helvetica, sans-serif;*/
-    font-size: 22px /*14*/
+      font-family: "TeXGyrePagella", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+      font-size: 22px
     }
+
     heading {
-    font-family: "TeXGyrePagella", "Palatino Linotype", "Book Antiqua", Palatino, serif; /*'Lato', Verdana, Helvetica, sans-serif;*/
-    font-size: 26px;
-    color: #e37222; /*#fc4a1a;*/
+      font-family: "TeXGyrePagella", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+      font-size: 26px;
+      color: #e37222;
     }
+
     heading2 {
-    font-family: "TeXGyrePagella", "Palatino Linotype", "Book Antiqua", Palatino, serif; /*'Lato', Verdana, Helvetica, sans-serif;*/
-    font-size: 22px;
+      font-family: "TeXGyrePagella", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+      font-size: 22px;
     }
+
     papertitle {
-    font-family: "TeXGyrePagella", "Palatino Linotype", "Book Antiqua", Palatino, serif; /*'Lato', Verdana, Helvetica, sans-serif;*/
-    font-size: 22px /*14*/
-    /*font-weight: 700;*/
+      font-family: "TeXGyrePagella", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+      font-size: 22px
     }
+
     name {
-    font-family: "TeXGyrePagella", "Palatino Linotype", "Book Antiqua", Palatino, serif; /*'Lato', Verdana, Helvetica, sans-serif;*/
-    font-size: 42px;
+      font-family: "TeXGyrePagella", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+      font-size: 42px;
     }
+
     li:not(:last-child) {
-        margin-bottom: 5px;
+      margin-bottom: 5px;
     }
-    .one
-    {
-    width: 160px;
-    height: 160px;
-    position: relative;
+
+    .one {
+      width: 160px;
+      height: 160px;
+      position: relative;
     }
-    .two
-    {
-    width: 160px;
-    height: 160px;
-    position: absolute;
-    transition: opacity .2s ease-in-out;
-    -moz-transition: opacity .2s ease-in-out;
-    -webkit-transition: opacity .2s ease-in-out;
+
+    .two {
+      width: 160px;
+      height: 160px;
+      position: absolute;
+      transition: opacity .2s ease-in-out;
+      -moz-transition: opacity .2s ease-in-out;
+      -webkit-transition: opacity .2s ease-in-out;
     }
+
     .fade {
-     transition: opacity .2s ease-in-out;
-     -moz-transition: opacity .2s ease-in-out;
-     -webkit-transition: opacity .2s ease-in-out;
+      transition: opacity .2s ease-in-out;
+      -moz-transition: opacity .2s ease-in-out;
+      -webkit-transition: opacity .2s ease-in-out;
     }
+
     span.highlight {
-        background-color: #ffffd0;
+      background-color: #ffffd0;
     }
   </style>
 
-
   <title>Dylan Slack</title>
-  
+
   <meta name="author" content="Dylan Slack">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/png" href="images/seal_logo.png">
-  <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-1FHVQZDHD9"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'G-1FHVQZDHD9');
   </script>
 </head>
 
 <body>
-  <table style="width:100%;max-width:1000px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-    <tr style="padding:0px">
-      <td style="padding:0px">
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr style="padding:0px">
-            <td style="padding:5.0%;width:70%;vertical-align:middle">
-              <p style="text-align:center">
-                <name>Dylan Slack</name>
+  <table style="width:100%;max-width:1000px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+    <tbody>
+      <tr style="padding:0px">
+        <td style="padding:0px">
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+              <tr style="padding:0px">
+                <td style="padding:5.0%;width:70%;vertical-align:middle">
+                  <p style="text-align:center">
+                    <name>Dylan Slack</name>
+                    <br>
+                    <strong>d[last name]@uci.edu</strong>
+                  </p>
+                  <p>Hi! I'm a researcher at Google DeepMind focused on post-training research in GDM's GenAI team. I contributed to Gemini 2.5, Gemini 3.0, and Gemini 3.1. I also worked on GDM's <a href="https://research.google/blog/enabling-physician-centered-oversight-for-amie/">AMIE medical AI system</a>.
+                    </p><p> 
+                   Previously, I recieved a Ph.D. from UC Irvine advised by <a href="https://sameersingh.org/">Sameer Singh</a> and <a href="https://himalakkaraju.github.io/">Hima Lakkaraju</a>. My thesis focused on making AI more reliable through natural language interaction, leveraging language models as a bridge between complex systems and human users.
+                  </p>
+                  <p style="text-align:center">
+                    <a href="data/dylan_z_slack_CV.pdf">CV</a>&nbsp/&nbsp
+                    <a href="https://scholar.google.com/citations?user=pyhz-gUAAAAJ&hl=en">Google Scholar</a>&nbsp/&nbsp
+                    <a href="https://github.com/dylan-slack">Github</a>&nbsp/&nbsp
+                    <a href="https://twitter.com/dylanslack20">X</a>&nbsp/&nbsp
+                  </p>
+                </td>
+                <td style="padding:3%;width:40%;max-width:40%">
+                  <a href="images/me.jpeg"><img style="width:100%;max-width:100%" alt="profile photo" src="images/me.jpeg" class="hoverZoomLink"></a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tr>
+              <td style="padding:20px;width:100%;vertical-align:middle">
+                <heading>Selected Research</heading>
+                <p>Full list of publications available on <a href="https://scholar.google.com/citations?user=pyhz-gUAAAAJ&hl=en">Google Scholar</a>. * Denotes equal contribution.</p>
+              </td>
+            </tr>
+          </table>
+
+          <!-- 1. Learning Goal-Conditioned -->
+          <table style="width:95%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+              <td width="75%" valign="middle">
+                <a href="https://arxiv.org/abs/2407.13887">
+                  <papertitle>Learning Goal-Conditioned Representations for Language Reward Models</papertitle>
+                </a>
                 <br>
-                <strong>
-                  dslack@uci.edu
-                </strong>
-              </p>
-              <p>Hello! I am a machine learning researcher. Currently, I'm a research scientist at Google DeepMind, where I work on Gemini. Previously, I recieved a Ph.D. from UC Irvine advised by <a href="https://sameersingh.org/">Sameer&nbspSingh</a> and <a href="https://himalakkaraju.github.io/">Hima&nbspLakkaraju</a>. My Ph.D. was generously supported by an <a href="https://www.ics.uci.edu/hpi/">HPI</a> fellowship. I interned at <a href="https://aws.amazon.com/">AWS</a> in 2020 and <a href="https://ai.google/">Google AI</a> in 2021&nbsp👨‍💻.
-              </p>
+                <a>Vaskar Nath*</a>, <strong>Dylan Slack*</strong>, <a>Jeff Da</a>, <a>Yuntao Ma</a>, <a>Hugh Zhang</a>, <a>Spencer Whitehead</a> <a>Sean Hendryx</a>
+                <br>
+                <em>NeurIPS</em>, 2024
+                <br>
+                <a href="https://arxiv.org/abs/2407.13887"> arXiv </a> / <a href="https://github.com/vaskarnathscale/goal-conditioned-rm"> code </a>
+              </td>
+            </tbody>
+          </table>
+          <br>
 
-              <p style="text-align:center">
-                <a href="data/dylan_z_slack_CV.pdf">CV</a>&nbsp/&nbsp
-                <a href="https://scholar.google.com/citations?hl=en&user=pyhz-gUAAAAJ&view_op=list_works&sortby=pubdate">Google Scholar</a>&nbsp/&nbsp
-                <a href="https://github.com/dylan-slack">Github</a>&nbsp/&nbsp
-                <a href="https://twitter.com/dylanslack20">Twitter</a>&nbsp/&nbsp
-                <a href="notes/index.html">Notes</a>
-              </p>
-            </td>
-            <td style="padding:3%;width:40%;max-width:40%">
-              <a href="images/me.jpeg"><img style="width:100%;max-width:100%" alt="profile photo" src="images/me.jpeg" class="hoverZoomLink"></a>
-            </td>
-          </tr>
+          <!-- 2. A Careful Examination -->
+          <table style="width:95%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+              <td width="75%" valign="middle">
+                <a href="https://arxiv.org/abs/2405.00332">
+                  <papertitle>A Careful Examination of Large Language Model Performance on Grade School Arithmetic</papertitle>
+                </a>
+                <br>
+                <a>Hugh Zhang</a>, <a>Jeff Da</a>, <a>Dean Lee</a>, <a>Vaughn Robinson</a>, <a>Catherine Wu</a>, <a>Will Song</a>, <a>Tiffany Zhao</a>, <a>Pranav Raja</a>, <strong>Dylan Slack</strong>, <a>Qin Lyu</a>, <a>Sean Hendryx</a>, <a>Russell Kaplan</a>, <a>Summer Yue</a>
+                <br>
+                <em>NeurIPS D&B</em>, 2024
+                <br>
+                <a href="https://arxiv.org/abs/2405.00332"> arXiv </a>
+              </td>
+            </tbody>
+          </table>
+          <br>
 
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Research</heading>
-              <p>Please find my research works here. * Denotes equal contribution.</p>
-            </td>
-          </tr> 
-      </table>
+          <!-- 3. TalkToModel -->
+          <table style="width:95%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+              <td width="75%" valign="middle">
+                <a href="https://www.nature.com/articles/s42256-023-00692-8">
+                  <papertitle>TalkToModel: Explaining Machine Learning Models with Interactive Natural Language Conversations</papertitle>
+                </a>
+                <br>
+                <strong>Dylan Slack</strong>, <a href="https://satyapriyakrishna.com">Satyapriya Krishna</a>, <a href="https://himalakkaraju.github.io/">Hima Lakkaraju*</a>, <a href="https://sameersingh.org/">Sameer Singh*</a>
+                <br>
+                <em>Nature Machine Intelligence</em>, 2023
+                <br>
+                <em>TSRML @ NeurIPS</em>, 2022 &nbsp <font color=red><strong>Honorable Mention Outstanding Paper</strong></font>
+                <br>
+                <a href="https://www.nature.com/articles/s42256-023-00692-8"> Nature Link </a> / <a href="https://arxiv.org/abs/2207.04154"> arXiv </a> / <a href="https://github.com/dylan-slack/TalkToModel">code</a> / <a href="https://nlp.ics.uci.edu/talk-to-healthcare-model/">demo</a>
+              </td>
+            </tbody>
+          </table>
+          <br>
 
-        <!-- <table style="width:95%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody> -->
-        <!-- <td width="75%" valign="middle"></td> -->
-        <!-- <table></table> -->
-        <!-- <br> -->
+          <!-- 4. Fooling LIME and SHAP -->
+          <table style="width:95%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+              <td width="75%" valign="middle">
+                <a href="https://arxiv.org/abs/1911.02508">
+                  <papertitle>Fooling LIME and SHAP: Adversarial Attacks on Post hoc Explanation Methods</papertitle>
+                </a>
+                <br>
+                <strong>Dylan Slack*</strong>, <a href="https://scholar.harvard.edu/shilgard/publications">Sophie Hilgard*</a>, <a href="https://www.linkedin.com/in/emily-jia-a46036134/">Emily Jia</a>, <a href="https://sameersingh.org/">Sameer Singh</a>, and <a href="https://himalakkaraju.github.io/">Hima Lakkaraju</a>
+                <br>
+                <em>AIES</em>, 2020 &nbsp <font color=red><strong>(Oral Presentation)</strong></font>
+                <br>
+                <a href="https://github.com/dylan-slack/Fooling-LIME-SHAP">code</a> / <a href="https://arxiv.org/abs/1911.02508">arXiv</a>
+                <br>
+                Press: <a href="https://blog.deeplearning.ai/blog/the-batch-sony-goes-ai-intels-gpu-killers-transformer-networks-in-disguise-malicious-models-fool-bias-detection">Deeplearning.ai</a> / <a href="https://hbr.org/2019/12/the-ai-transparency-paradox">HBR</a>
+              </td>
+            </tbody>
+          </table>
 
-        <!-- Hugh Zhang, Jeff Da, Dean Lee, Vaughn Robinson, Catherine Wu, Will Song, Tiffany Zhao, Pranav Raja, Dylan Slack, Qin Lyu, Sean Hendryx, Russell Kaplan, Summer Yue -->
-
-        <!-- Vaskar Nath, Dylan Slack, Jeff Da, Yuntao Ma, Hugh Zhang, Spencer Whitehead, Sean Hendryx -->
-
-        <table style="width:95%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <!-- <tr bgcolor="#ffffd0"> -->
-            <td width="75%" valign="middle">
-              <a href="https://arxiv.org/abs/2407.13887", id='mostrecentpaper'>
-                <papertitle>Learning Goal-Conditioned Representations for Language Reward Models</papertitle>
-              </a>
-              <br>
-              <a>Vaskar Nath*</a>,
-              <strong>Dylan Slack*</strong>,
-              <a>Jeff Da</a>,
-              <a>Yuntao Ma</a>,
-              <a>Hugh Zhang</a>,
-              <a>Spencer Whitehead</a>
-              <a>Sean Hendryx</a>
-              <br>
-              <em>NeurIPS</em>, 2024 &nbsp</font>
-              <br>
-              <a href="https://arxiv.org/abs/2407.13887"> arXiv </a> /
-              <a href="https://github.com/vaskarnathscale/goal-conditioned-rm"> code </a>
-            </td>
-          <!-- </tr> -->
-        </tbody></table>
-        <br>
-
-        <table style="width:95%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <!-- <tr bgcolor="#ffffd0"> -->
-            <td width="75%" valign="middle">
-              <a href="https://arxiv.org/abs/2405.00332", id='mostrecentpaper'>
-                <papertitle>A Careful Examination of Large Language Model Performance on Grade School Arithmetic</papertitle>
-              </a>
-              <br>
-              <a>Hugh Zhang</a>,
-              <a>Jeff Da</a>,
-              <a>Dean Lee</a>,
-              <a>Vaughn Robinson</a>,
-              <a>Catherine Wu</a>,
-              <a>Will Song</a>,
-              <a>Tiffany Zhao</a>,
-              <a>Pranav Raja</a>,
-              <strong>Dylan Slack</strong>,
-              <a>Qin Lyu</a>,
-              <a>Sean Hendryx</a>,
-              <a>Russell Kaplan</a>,
-              <a>Summer Yue</a>
-              <br>
-              <em>NeurIPS D&B</em>, 2024 &nbsp</font>
-              <br>
-              <a href="https://arxiv.org/abs/2405.00332"> arXiv </a>
-            </td>
-          <!-- </tr> -->
-        </tbody></table>
-        <br>
-
-        <table style="width:95%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <!-- <tr bgcolor="#ffffd0"> -->
-            <td width="75%" valign="middle">
-              <a href="https://www.nature.com/articles/s42256-023-00692-8", id='mostrecentpaper'>
-                <papertitle>TalkToModel: Explaining Machine Learning Models with Interactive Natural Language Conversations</papertitle>
-              </a>
-              <br>
-              <strong>Dylan Slack</strong>,
-              <a href="https://satyapriyakrishna.com">Satyapriya Krishna</a>,
-              <a href="https://himalakkaraju.github.io/">Hima Lakkaraju*</a>,
-              <a href="https://sameersingh.org/">Sameer Singh*</a> 
-              <br>
-              <em>Nature Machine Intelligence</em>, 2023 &nbsp</font>
-              <br>
-              <em>TSRML @ NeurIPS</em>, 2022 &nbsp <font color=red><strong>Honoral Mention Outstanding Paper</strong></font>
-              <br>
-              <a href="https://www.nature.com/articles/s42256-023-00692-8"> Nature Link </a> / 
-              <a href="https://arxiv.org/abs/2207.04154"> arXiv </a> / 
-              <a href="https://github.com/dylan-slack/TalkToModel#quick-links">bibtex</a> / 
-              <a href="https://github.com/dylan-slack/TalkToModel">code</a> /
-              <a href="https://nlp.ics.uci.edu/talk-to-healthcare-model/">demo</a> 
-            </td>
-          <!-- </tr> -->
-        </tbody></table>
-        <br>
-
-        <table style="width:95%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <!-- <tr bgcolor="#ffffd0"> -->
-            <td width="75%" valign="middle">
-              <a href="https://arxiv.org/abs/2305.11426", id='mostrecentpaper'>
-                <papertitle>Post Hoc Explanations of Language Models Can Improve Language Models</papertitle>
-              </a>
-              <br>
-              <a href="https://satyapriyakrishna.com">Satyapriya Krishna</a>,
-              <a href="">Jiaqi Ma</a>,
-              <strong>Dylan Slack</strong>,
-              <a href="">Asma Ghandeharioun</a>,
-              <a href="https://sameersingh.org/">Sameer Singh</a>,
-              <a href="">Himabindu Lakkaraju</a>,
-              <br>
-              <em>NeurIPS</em>, 2023
-              <br>
-              <a href="https://arxiv.org/abs/2305.11426"> arXiv </a>
-            </td>
-          <!-- </tr> -->
-        </tbody></table>
-        <br>
-
-        <table style="width:95%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <!-- <tr bgcolor="#ffffd0"> -->
-            <td width="75%" valign="middle">
-              <a href="https://arxiv.org/abs/2304.13188", id='mostrecentpaper'>
-                <papertitle>TABLET: Learning From Instructions For Tabular Data</papertitle>
-              </a>
-              <br>
-              <strong>Dylan Slack</strong>,
-              <a href="https://sameersingh.org/">Sameer Singh</a> 
-              <br>
-              <em>arXiv</em>, 2023
-              <br>
-              <a href="https://arxiv.org/abs/2304.13188"> arXiv </a> / 
-              <a href="https://github.com/dylan-slack/Tablet#citation">bibtex</a> / 
-              <a href="https://github.com/dylan-slack/Tablet">code</a> /
-              <a href="https://nlp.ics.uci.edu/tablet/">demo</a> 
-            </td>
-          <!-- </tr> -->
-        </tbody></table>
-        <br>
-
-        <table style="width:95%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <!-- <tr bgcolor="#ffffd0"> -->
-            <td width="75%" valign="middle">
-              <a href="https://arxiv.org/abs/2202.01875">
-                <papertitle>Rethinking Explainability as a Dialogue: A Practitioner's Perspective</papertitle>
-              </a>
-              <br>
-              <a href="https://himalakkaraju.github.io/">Hima Lakkaraju</a>*,
-              <strong>Dylan Slack</strong>*,
-              <a href="https://yuxinchen.org/">Yuxin Chen</a>, 
-              <a href="https://chenhaot.com/">Chenhao Tan</a>, and
-              <a href="https://sameersingh.org/">Sameer Singh</a> 
-              <br>
-              <em>HCAI @ NeurIPS</em>, 2022
-              <br>
-              <a href="https://arxiv.org/abs/2202.01875"> arXiv </a> /
-              <a href="data/rethinking.bib">bibtex</a> 
-            </td>
-          <!-- </tr> -->
-        </tbody></table>
-        <br>
-
-        <table style="width:95%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <td width="75%" valign="middle">
-              <a href="https://arxiv.org/abs/2202.04849">
-                <papertitle>SAFER: Data-Efficient and Safe Reinforcement Learning via Skill Acquisition</papertitle>
-              </a>
-              <br>
-              <strong>Dylan Slack</strong>, 
-              <a href="https://stanfordasl.github.io/people/yinlam-chow/">Yinlam Chow</a>, 
-              <a href="https://sites.google.com/site/daibohr/">Bo Dai</a>, and 
-              <a href="https://www.linkedin.com/in/nevanwichers/">Nevan Wichers</a>
-              <br>
-              <em>DARL @ ICML</em>, 2022
-              <br>
-              <a href="https://arxiv.org/abs/2202.04849">arXiv</a> /
-              <a href="data/safer.bib">bibtex</a> 
-            </td>
-        </tbody></table>
-        <br>
-
-        <table style="width:95%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td width="75%" valign="middle">
-              <a href="https://chemrxiv.org/engage/chemrxiv/article-details/6178956c0c0480094846a1b3">
-                <papertitle>Active Meta-Learning for Predicting and Selecting Perovskite Crystallization Experiments</papertitle>
-              </a>
-              <br>
-              <a href="https://scholar.google.com/citations?user=tBnUQosAAAAJ&hl=en">Venkateswaran Shekar</a>,
-              <a href="https://www.linkedin.com/in/gxnicholas/">Gareth Nicholas</a>,
-              <a>Mansoor Ani Najeeb</a>,
-              <a>Margaret Zeile</a>,
-              <a>Vincent Yu</a>,
-              <a>Xiaorong Wang</a>,
-              <strong>Dylan&nbspSlack</strong>, 
-              <a>Zhi Li</a>,
-              <a>Philip Nega</a>,
-              <a>Emory Chan</a>,
-              <a href="http://ww3.haverford.edu/chemistry/Norquist/">Alexander Norquist</a>,
-              <a href="https://www.fordham.edu/info/28651/joshua_schrier">Joshua Schrier</a>, and
-              <a href="http://sorelle.friedler.net/">Sorelle Friedler </a>
-              <br>
-              <em>Journal of Chemical Physics</em>, 2022
-              <br>
-            </td>
-          </tr>
-        </tbody></table>
-        <br>
-        
-        <table style="width:95%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <!-- <tr bgcolor="#ffffd0"> -->
-            <td width="75%" valign="middle">
-              <a href="https://arxiv.org/abs/2008.05030">
-                <papertitle>Reliable Post hoc Explanations: Modeling Uncertainty in Explainability</papertitle>
-              </a>
-              <br>
-              <strong>Dylan Slack</strong>, 
-              <a href="https://scholar.harvard.edu/shilgard/publications">Sophie Hilgard</a>, 
-              <a href="https://sameersingh.org/">Sameer Singh</a>, and 
-              <a href="https://himalakkaraju.github.io/">Hima Lakkaraju</a>
-              <br>
-              <em>NeurIPS</em>, 2021
-              <br>
-              <a href="https://arxiv.org/abs/2008.05030"> arXiv </a> /
-              <a href="https://github.com/dylan-slack/Modeling-Uncertainty-Local-Explainability/blob/master/citation.bib">bibtex</a> /
-              <a href="https://dylanslacks.website/reliable/index.html">Project Links</a>
-            </td>
-          <!-- </tr> -->
-        </tbody></table>
-        <br>
-
-        <table style="width:95%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-         <!-- <tr bgcolor="#ffffd0"> -->
-            <td width="75%" valign="middle">
-              <a href="https://arxiv.org/abs/2106.02666">
-                <papertitle>Counterfactual Explanations Can Be Manipulated</papertitle>
-              </a>
-              <br>
-              <strong>Dylan Slack</strong>, 
-              <a href="https://scholar.harvard.edu/shilgard/publications">Sophie Hilgard</a>, 
-              <a href="https://sameersingh.org/">Hima Lakkaraju</a>, and 
-              <a href="https://himalakkaraju.github.io/">Sameer Singh</a>
-              <br>
-              <em>NeurIPS</em>, 2021
-              <br>
-              <a href="https://arxiv.org/abs/2106.02666"> arXiv </a> /
-              <a href="https://github.com/dylan-slack/manipulating-cfes/blob/main/citation.bib">bibtex</a> /
-              <a href="https://dylanslacks.website/cfe/index.html">Project Links</a> 
-            </td>
-          <!-- </tr> -->
-        </tbody></table>
-
-        <br> 
-   
-        <table style="width:95%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td width="75%" valign="middle">
-              <a href="https://arxiv.org/abs/2106.04631">
-                <papertitle>On the Lack of Robustness of Neural Text Classifier Interpretations</papertitle>
-              </a>
-              <br>
-              <a href="https://people.mpi-sws.org/~mzafar/">Muhammad Bilal Zafar</a>, 
-              <a href="https://sites.google.com/view/mdonini">Michele Donini</a>,
-              <strong>Dylan Slack</strong>, 
-              <a href="http://www0.cs.ucl.ac.uk/staff/c.archambeau/">Cedric Archambeau</a>,
-              <a href="https://srdas.github.io/">Sanjiv Das</a>, and
-              <a href="https://scholar.google.com/citations?user=av5rGaEAAAAJ&hl=en">Krishnaram Kenthapadi</a>
-              <br>
-              <em>Findings of ACL</em>, 2021
-              <br>
-              <a href="https://arxiv.org/abs/2106.04631">arXiv</a> / 
-              <a href="data/robustness.bib">bibtex</a>
-            </td>
-          </tr>
-        </tbody></table>
-
-        <br>
-
-        <table style="width:95%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-           <!--  <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="images/dt-interpret.png" alt="Fairness Warning" width="230" height="160">
-            </td> -->
-            <td width="75%" valign="middle">
-              <a href="https://www.amazon.science/publications/defuse-training-more-robust-models-through-creation-and-correction-of-novel-model-errors">
-                <papertitle>Defuse: Training More Robust Models through Creation and Correction of Novel Model Errors</papertitle>
-              </a>
-              <br>
-              <strong>Dylan Slack</strong>, 
-              <a href="https://www.linkedin.com/in/rauschmayr/en?originalSubdomain=ca">Nathalie Rauschmayr</a>, and 
-              <a href="https://www.linkedin.com/in/krishnaramkenthapadi/">Krishnaram Kenthapadi</a>
-              <br>
-              <em>XAI 4 Debugging Workshop, NeurIPS</em>, 2021
-              <br>
-              <a href="https://www.amazon.science/publications/defuse-training-more-robust-models-through-creation-and-correction-of-novel-model-errors">Paper Link</a> / 
-              <a href="https://github.com/amazon-research/creating-and-correcting-novel-ml-model-errors">Code</a> 
-              <!-- <p></p> -->
-<!--               <p>The number of computations (e.g., +,-,>) users have to perform to trace the output of a model can be used as a proxy for model interpretability.</p> -->
-              <!-- <p></p> -->
-            </td>
-          </tr>
-        </tbody></table> 
-        <br>
-
-        <table style="width:95%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td width="75%" valign="middle">
-              <a href="https://jfds.pm-research.com/content/early/2021/06/01/jfds.2021.1.063">
-                <papertitle>Context, Language Modeling, and Multimodal Data in Finance</papertitle>
-              </a>
-              <br>
-              <a href="https://srdas.github.io/">Sanjiv Ranjan Das</a>, 
-              <a href="https://www.linkedin.com/in/cgoggins/">Connor Goggins</a>,
-              <a>John He</a>,
-              <a>George Karypis</a>,
-              <a href="https://www.linkedin.com/in/skm4ml/">Sandeep Krishnamurthy</a>,
-              <a href="https://www.linkedin.com/in/mitali-mahajan/">Mitali Mahajan</a>,
-              <a>Nagpurnanand Prabhala</a>,
-              <strong>Dylan Slack</strong>, 
-              <a href="https://www.linkedin.com/in/robertavandusen/">Robert Van Dusen</a>,
-              <a>Shenghua Yue</a>,
-              <a>Sheng Zha</a>, and
-              <a>Shuai Zheng</a>
-              <br>
-              <em>The Journal of Financial Data Science</em>, 2021
-              <br>
-              <a href="https://jfds.pm-research.com/content/early/2021/06/01/jfds.2021.1.063">Journal Link</a> / 
-              <a href="data/contextfinance.bib">bibtex</a>
-            </td>
-          </tr>
-        </tbody></table>
-
-        <br>
-
-
-        <table style="width:95%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <!-- <tr bgcolor="#ffffd0"> -->
-            <td width="75%" valign="middle">
-              <a href="https://arxiv.org/abs/1911.02508">
-                <papertitle>Fooling LIME and SHAP: Adversarial Attacks on Post hoc Explanation Methods</papertitle>
-              </a>
-              <br>
-              <strong>Dylan Slack*</strong>, 
-              <a href="https://scholar.harvard.edu/shilgard/publications">Sophie Hilgard*</a>,
-              <a href="https://www.linkedin.com/in/emily-jia-a46036134/">Emily Jia</a>,
-              <a href="https://sameersingh.org/">Sameer Singh</a>, and 
-              <a href="https://himalakkaraju.github.io/">Hima Lakkaraju</a>
-              <br>
-              <em>AIES</em>, 2020 &nbsp <font color=red><strong>(Oral Presentation)</strong></font>
-              <br>
-              <em>Work also presented at SafeAI Workshop, AAAI</em>, 2020
-              <br>
-              <a href="https://github.com/dylan-slack/Fooling-LIME-SHAP">code</a> / 
-              <a href="https://www.youtube.com/watch?v=4HyJIOenIlI">video</a> / 
-              <a href="https://arxiv.org/abs/1911.02508">arXiv</a> / 
-              <a href="data/slackfooling2020.bib">bibtex</a> 
-              <br>
-              Press: 
-              <a href="https://blog.deeplearning.ai/blog/the-batch-sony-goes-ai-intels-gpu-killers-transformer-networks-in-disguise-malicious-models-fool-bias-detection">Deeplearning.ai</a> / 
-              <a href="https://hbr.org/2019/12/the-ai-transparency-paradox">Harvard Business Review</a>
-            </td>
-          <!-- </tr> -->
-        </tbody></table>
-
-        <br>
-
-        <table style="width:95%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <!-- <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="images/diffpriv.png" alt="Private-Models" width="230" height="160">
-            </td> -->
-            <td width="75%" valign="middle">
-              <a href="https://arxiv.org/abs/2009.05886">
-                <papertitle>Differentially Private Language Models Benefit from Public Pre-training</papertitle>
-              </a>
-              <br>
-              <a href="https://gavinkerrigan.github.io/">Gavin Kerrigan*</a>,
-              <strong>Dylan Slack*</strong>, and 
-              <a href="https://jens321.github.io/">Jens Tuyls*</a>
-              <br>
-              <em>EMNLP PrivateNLP Workshop</em>, 2020
-              <br>
-              <a href="https://github.com/dylan-slack/Finetuning-DP-Language-Models">code</a> / 
-              <a href="https://arxiv.org/abs/2009.05886">arXiv</a> / 
-              <a href="data/slackdiffpriv2020.bib">bibtex</a>
-              <br>
-              <p></p>
-         <!--      <p>Pre-training on public data helps differentially private models learn quicker.</p> -->
-              <p></p>
-            </td>
-          </tr>
-        </tbody></table> 
-
-
-        <table style="width:95%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td width="75%" valign="middle">
-              <a href="https://arxiv.org/abs/1908.09092">
-                <papertitle>Fairness Warnings and Fair-MAML: Learning Fairly with Minimal Data</papertitle>
-              </a>
-              <br>
-              <strong>Dylan Slack</strong>, 
-              <a href="http://sorelle.friedler.net/">Sorelle Friedler</a>,
-              <a href="https://www.linkedin.com/in/emile-givental-b27899111/">Emile Givental</a>,
-              <br>
-              <em>FAccT</em>, 2020 &nbsp
-              <br>
-              <em>Work also presented at HCML Workshop, NeurIPS</em>, 2019
-              <br>
-              <a href="https://github.com/dylan-slack/fairness-warnings-fair-maml">code</a> / 
-              <a href="https://www.youtube.com/watch?v=QRbckrBzGE8&list=PLXA0IWa3BpHkaM6uJauBdtkR3Hp4rePfp&index=55&t=0s">video</a> / 
-              <a href="https://arxiv.org/abs/1908.09092">arXiv</a> / 
-              <a href="data/slackfairmaml2020.bib">bibtex</a> 
-              <br>
-              <p></p>
-              <!-- <p>Fairness Warnings tell you when a fair model won't transfer to a new setting well, but with a few data points avaliable, we can use meta-learning to help.</p> -->
-              <p></p>
-            </td>
-          </tr>
-        </tbody></table>
-
-<!--         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
             <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Workshop</heading>
-            </td>
-          </tr>
-        </tbody></table>  --> 
-      
+              <td style="padding:20px;width:100%;vertical-align:middle; text-align:left;">
+                <p><strong><a href="https://scholar.google.com/citations?user=pyhz-gUAAAAJ&hl=en">» See all publications on Google Scholar</a></strong></p>
+              </td>
+            </tr>
+          </table>
 
-        <table style="width:95%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-           <!--  <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="images/dt-interpret.png" alt="Fairness Warning" width="230" height="160">
-            </td> -->
-            <td width="75%" valign="middle">
-              <a href="https://arxiv.org/abs/1902.03501">
-                <papertitle>Assessing the Local Interpretability of Machine Learning Models</papertitle>
-              </a>
-              <br>
-              <strong>Dylan Slack</strong>, 
-              <a href="http://sorelle.friedler.net/">Sorelle Friedler</a>,
-              <a href="https://cscheid.net/">Carlos Scheidegger</a>, and 
-              <a href="http://www.cs.utah.edu/~rahduro/">Chitradeep Dutta Roy</a>
-              <br>
-              <em>HCML Workshop, NeurIPS</em>, 2019
-              <br>
-              <a href="https://arxiv.org/abs/1902.03501">arXiv</a> / 
-              <a href="data/slackassessing2019.bib">bibtex</a> 
-              <br>
-              <p></p>
-<!--               <p>The number of computations (e.g., +,-,>) users have to perform to trace the output of a model can be used as a proxy for model interpretability.</p> -->
-              <p></p>
-            </td>
-          </tr>
-        </tbody></table> 
-      
-<!-- 
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Patents</heading>
-              <p>
-                <papertitle>Automatic Failure Diagnosis and Correction in Machine Learning Models</papertitle>
-              <br> 
-              <a href="https://www.linkedin.com/in/rauschmayr/en-us/?originalSubdomain=ca">Nathalie Rauschmayr</a>,
-              <a href="https://scholar.google.com/citations?user=av5rGaEAAAAJ&hl=en">Krishnaram Kenthapadi</a>, and
-              <strong>Dylan Slack</strong>
-              <br>
-              <em>Patent Application Filed</em>
-              <br>
-              </p>
-            </td>
-          </tr>
-        </tbody></table>
- -->
+         <!--  <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+              <tr>
+                <td style="padding:20px;width:100%;vertical-align:middle">
+                  <heading>Recent Talks</heading>
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Recent Talks</heading>
-           <!--    <p>
-                Here are a few recent talks! Click on the thumbnails to see the videos.
-              </p> -->
-            </td>
-          </tr>
-        </tbody></table>
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+              <tr>
+                <td style="padding:20px;width:25%;vertical-align:middle">
+                  <a href="https://www.youtube.com/watch?v=Eta5Z_ZXrMY" target="_blank"><img src="images/medai.png" alt="bayes-lime-shap" width="150" height="80"></a>
+                </td>
+                <td width="75%" valign="middle">
+                  <p>Speaking to the <em>MedAI Group</em> at Stanford</p>
+                </td>
+              </tr>
+            </tbody>
+          </table> -->
 
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
+          <!-- (Other talks abbreviated for space, but keep them in your actual file) -->
 
-              <a href="https://www.youtube.com/watch?v=Eta5Z_ZXrMY" target="_blank"><img src="images/medai.png" alt="bayes-lime-shap" width="150" height="80"></a>
-            </td>
-            <td width="75%" valign="middle">
-              <p></p>
-              <p>Speaking to the <em>MedAI Group</em> at Stanford</a></p>
-              <p></p>
-            </td>
-          </tr>
-        </tbody></table>
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-
-              <a href="https://www.youtube.com/watch?v=mHlDNjpN0nw" target="_blank"><img src="images/bayesthumbnail.png" alt="bayes-lime-shap" width="150" height="80"></a>
-            </td>
-            <td width="75%" valign="middle">
-              <p></p>
-              <p>Presenting <em>Reliable Post hoc Explanations: Modeling Uncertainty in Explainability</em></a></p>
-              <p></p>
-            </td>
-          </tr>
-        </tbody></table>
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-
-              <a href="https://www.youtube.com/watch?v=q-7LB3I4PyU" target="_blank"><img src="data/cfes.jpg" alt="cfes-manipulated" width="150" height="80"></a>
-            </td>
-            <td width="75%" valign="middle">
-              <p></p>
-              <p>Presenting <em>Counterfactual Explanations Can Be Manipulated</em></a></p>
-              <p></p>
-            </td>
-          </tr>
-        </tbody></table>
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-
-              <a href="https://www.youtube.com/watch?v=qCYAKmFFpbs" target="_blank"><img src="images/aisc-talk.png" alt="aisc-talk" width="150" height="80"></a>
-            </td>
-            <td width="75%" valign="middle">
-              <p></p>
-              <p>Speaking at <a href="https://ai.science/my">AISC</a>, virtually.
-              <p></p>
-            </td>
-          </tr>
-        </tbody></table>
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-
-              <a href="https://www.youtube.com/watch?v=QRbckrBzGE8&list=PLXA0IWa3BpHkaM6uJauBdtkR3Hp4rePfp&index=55&t=0s" target="_blank"><img src="images/facct-talk-vid.png" alt="facct-talk" width="150" height="80"></a>
-            </td>
-            <td width="75%" valign="middle">
-              <p></p>
-              <p>Speaking at <a href="https://facctconference.org/">FAccT</a>, in Barcelona, Spain.
-              <p></p>
-            </td>
-          </tr>
-        </tbody></table>
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:0px">
-              <br>
-              <p style="text-align:right;font-size:small;">
-                <a href="https://jonbarron.info/"><font size="2">Source modified from here.</font></a>
-              </p>
-            </td>
-          </tr>
-        </tbody></table>
-
-
-
-
-      </td>
-    </tr>
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+              <tr>
+                <td style="padding:0px">
+                  <br>
+                  <p style="text-align:right;font-size:small;">
+                    <a href="https://jonbarron.info/"><font size="2">Source modified from here.</font></a>
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
   </table>
 </body>
-
 </html>
